@@ -4,46 +4,300 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sales Manager App - Download</title>
+  <title>Smart Sales Manager – Download</title>
 
-  <!-- Open Graph Preview -->
-  <meta property="og:title" content="Sales Manager App">
-  <meta property="og:description" content="ডাউনলোড করুন Sales Manager — দোকান, স্টক ও বিক্রয় ম্যানেজমেন্ট অ্যাপ।">
+  <!-- Social Preview -->
+  <meta property="og:title" content="Smart Sales Manager App">
+  <meta property="og:description" content="বিক্রয়, স্টক, ডেলিভারি ও রিপোর্ট—সব এক অ্যাপে। এখনই ডাউনলোড করুন।">
   <meta property="og:image" content="https://shohadhossainbd.github.io/Sales-Manager/logo.jpg">
-  <meta property="og:url" content="https://shohadhossainbd.github.io/Sales-Manager/">
   <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sales Manager App">
-  <meta name="twitter:description" content="ডাউনলোড করুন Sales Manager অ্যাপ।">
-  <meta name="twitter:image" content="https://shohadhossainbd.github.io/Sales-Manager/logo.jpg">
 
-  <!-- Auto Redirect -->
-  <meta http-equiv="refresh" content="2; URL='https://github.com/Shohadhossainbd/Sales-Manager/releases/download/Sales_Manager/Sales.Manager.apk'">
+  <!-- Auto Download -->
+  <meta http-equiv="refresh" content="30; URL='https://github.com/Shohadhossainbd/Sales-Manager/releases/download/Sales_Manager/Sales.Manager.apk'">
 
   <style>
-    body { font-family: Arial; background: #f3f7f9; padding: 40px; text-align: center; }
-    .card { background: white; max-width: 450px; margin: auto; padding: 25px;
-            border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-    img { width: 100%; border-radius: 10px; }
-    a.button {
-      display: inline-block;
-      background: #28a745; color: white;
-      padding: 12px 20px; margin-top: 15px;
-      text-decoration: none; border-radius: 8px;
-      font-size: 18px; font-weight: bold;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #333;
     }
+
+    .container {
+     position: fixed:
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100vh;
+     padding: 20px;
+     box-sizing: border-box;
+    }
+
+    .header {
+      text-align: center;
+      padding: 0px 0;
+    }
+
+    .app-logo {
+      width: 150px;
+      height: 150px;
+      border-radius: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      margin-top: 5px;
+      font-size: 32px;
+      font-weight: bold;
+      color: #28a745;
+       }
+
+    .subtitle {
+      color: #666;
+      font-size: 16px;
+      margin: 0px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background: #28a745;
+      color: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      box-shadow: 0 6px 15px rgba(0,120,255,0.3);
+      transition: 0.3s;
+    }
+
+    .download-btn:hover {
+      background: green;
+      transform: translateY(-2px);
+    }
+  
+      .section-title { 
+          font-size: 20px; 
+          color: #28a745;
+          font-weight: bold;
+          margin: 5px 0;
+          }
+      .feature {
+      font-size: 16px;
+      }
+  
+    
+    .feature-list {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 15px;
+      padding: 12px 0;
+      font-size: 18px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .feature:last-child {
+      border-bottom: none;
+    }
+
+    .feature i {
+      color: #28a745;
+      font-size: 24px;
+      margin-top: 3px;
+    }
+
+    .highlight-box {
+      background: #e8f1ff;
+      padding: 20px;
+      border-radius: 15px;
+      border-left: 6px solid #28a745;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    /* Slider Styles */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      margin: 0px auto 20px auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      display: none;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.3);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
   </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
+
 <body>
-  <div class="card">
-    <img src="https://shohadhossainbd.github.io/Sales-Manager/logo.jpg">
-    <h2>Sales Manager App</h2>
-    <p>২ সেকেন্ড পরে ডাউনলোড শুরু হবে…</p>
-    <a class="button" href="https://github.com/Shohadhossainbd/Sales-Manager/releases/download/Sales_Manager/Sales.Manager.apk">
-      Download Now
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <img src="https://shohadhossainbd.github.io/Sales-Manager/logo.jpg" class="app-logo" alt="Smart Sales Manager Logo">
+    <h1>Sales Manager Apps </h1>
+    <p class="subtitle">আপনি কি বিক্রয় প্রতিনিধি (SR)? আপনার প্রতিদিনের কাজ এখন হবে অনেক স্মার্ট!</p>
+
+    <a class="download-btn" href="https://github.com/Shohadhossainbd/Sales-Manager/releases/download/Sales_Manager/Sales.Manager.apk">
+      🚀 অ্যাপ ডাউনলোড করুন
     </a>
+    <p style="color:#777; margin-top:8px;">৩ সেকেন্ড পরে ডাউনলোড স্বয়ংক্রিয়ভাবে শুরু হবে…</p>
   </div>
+  <div class="slider-container">
+    <div class="slider" id="slider">
+      <script>
+        for(let i=1; i<=16; i++){
+          document.write('<div class="slide"><img src="https://shohadhossainbd.github.io/Sales-Manager/image'+i+'.png" alt="Screenshot '+i+'"></div>');
+        }
+      </script>
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <!-- Features -->
+  <div class="section-title">📌 অ্যাপের মূল বৈশিষ্ট্যসমূহ</div>
+  <div class="feature-list">
+
+    <div class="feature">
+      <i class="fa-solid fa-cart-plus"></i>
+      <div>পণ্য এড ও অর্ডার কনফার্ম – এক ক্লিকে অর্ডার সম্পন্ন করুন।</div>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-boxes-stacked"></i>
+      <div>স্টক ম্যানেজমেন্ট – স্টক স্বয়ংক্রিয়ভাবে আপডেট হয়।</div>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-truck-fast"></i>
+      <div>ডেলিভারি কনফার্মেশন – ডেলিভারি দিলে স্টক নিজে থেকেই হালনাগাদ।</div>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-chart-line"></i>
+      <div>রিপোর্ট & বিশ্লেষণ – বিক্রয় ও স্টকের বিস্তারিত রিপোর্ট।</div>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-print"></i>
+      <div>রিপোর্ট প্রিন্ট – অফিস বা মিটিংয়ে ব্যবহারযোগ্য।</div>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-lock"></i>
+      <div>নিরাপদ – ইউজারভিত্তিক ডাটা কন্ট্রোল ও সিকিউরিটি।</div>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-wifi-slash"></i>
+      <div>অফলাইন সাপোর্ট – নেট না থাকলেও কাজ চলবে।</div>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-mobile-screen"></i>
+      <div>মোবাইল রেসপন্সিভ – যে কোনো স্ক্রিনে সুন্দরভাবে ব্যবহারযোগ্য।</div>
+    </div>
+
+  </div>
+
+
+  <!-- Why Important -->
+  <div class="section-title">🎯 কেন এই অ্যাপটি SR-এর জন্য অপরিহার্য?</div>
+  <div class="highlight-box">
+    ✔ সময় বাঁচান, অর্ডার প্রক্রিয়া আরও সহজ করুন।<br><br>
+    ✔ স্টক ও ডেলিভারিতে ভুল হওয়ার সুযোগ নেই।<br><br>
+    ✔ নিজের বিক্রয় রিপোর্ট যেকোনো সময় দেখুন।<br><br>
+    ✔ স্মার্ট নোটিফিকেশন ও অ্যালার্ট পান।<br><br>
+    ✔ রিপোর্ট প্রিন্ট করে ম্যানেজারকে সহজে জমা দিন।
+  </div>
+
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if(i === index) slide.classList.add('active');
+  });
+}
+
+// Initialize first slide
+showSlide(currentIndex);
+
+// Button events
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex -1;
+  showSlide(currentIndex);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex +1;
+  showSlide(currentIndex);
+});
+
+// Auto slide every 5 seconds
+setInterval(() => {
+  currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex +1;
+  showSlide(currentIndex);
+}, 5000);
+</script>
+
 </body>
 </html>
